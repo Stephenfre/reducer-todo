@@ -1,14 +1,12 @@
 import React from "react";
 
-const Todo = ({ state, dispatch }) => {
-  // const handleClick = e => {
-  //   e.preventDefault();
-  //   props.toggleCompleted(props.item.id);
-  // };
-
+const Todo = props => {
   return (
-    <div>
-      <p> {state.item}</p>
+    <div
+      className={`${props.completed ? "completed" : ""}`}
+      onClick={() => props.handleToggle(props.id)}
+    >
+      <p> {props.item}</p>
     </div>
   );
 };

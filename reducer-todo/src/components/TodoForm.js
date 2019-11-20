@@ -1,8 +1,8 @@
-import React, { useState, useReducer } from "react";
-import { initialState, todoReducer } from "../reducers/index";
+import React, { useState } from "react";
+// import { initialState, todoReducer } from "../reducers/index";
 
 const TodoForm = ({ dispatch }) => {
-  const [newTodoTask, setNewTodoTask] = useState({});
+  const [newTodoTask, setNewTodoTask] = useState("");
 
   const handleChanges = e => {
     setNewTodoTask(e.target.value);
@@ -17,6 +17,12 @@ const TodoForm = ({ dispatch }) => {
     setNewTodoTask("");
   };
 
+  const clearCompleted = e => {
+    dispatch({
+      type: "CLEAR_COMPLETED"
+    });
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -27,6 +33,7 @@ const TodoForm = ({ dispatch }) => {
           onChange={handleChanges}
         />
         <button type="submit">ADD TASK</button>
+        <button onClick={clearCompleted}>Clear Complete</button>
       </form>
     </div>
   );

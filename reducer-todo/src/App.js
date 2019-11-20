@@ -4,11 +4,12 @@ import TodoList from "./components/TodoList";
 import { initialState, todoReducer } from "./reducers/index";
 
 function App() {
-  const [state, dispatch] = useReducer(initialState, todoReducer);
+  const [state, dispatch] = useReducer(todoReducer, initialState);
+
   return (
     <div className="App">
       <TodoForm dispatch={dispatch} />
-      <TodoList state={state} dispatch={dispatch} />
+      <TodoList todos={state.todos} dispatch={dispatch} />
     </div>
   );
 }
