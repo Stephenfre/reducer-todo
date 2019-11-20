@@ -39,44 +39,4 @@ const TodoForm = ({ dispatch }) => {
   );
 };
 
-//   const handleChanges = e => {
-//     setNewTitleText(e.target.value);
-//   };
-
-//   return (
-//     <div>
-//       {!state.editing ? (
-//         <h1>
-//           {state.title}{" "}
-//           <i
-//             className="far fa-edit"
-//             onClick={() => dispatch({ type: "TOGGLE_EDITING" })}
-//           />
-//         </h1>
-//       ) : (
-//           <div>
-//             <input
-//               className="title-input"
-//               type="text"
-//               name="newTitleText"
-//               value={newTitleText}
-//               onChange={handleChanges}
-//             />
-//             <button
-//               onClick={() => {
-//                 dispatch({ type: "SET_TITLE", payload: newTitleText });
-//                 setNewTitleText("");
-//                 dispatch({ type: "TOGGLE_EDITING" });
-//               }}
-//             >
-//               Update title
-//           </button>
-//           </div>
-//         )}
-//     </div>
-//   );
-// };
-
-// export default Title;
-
 export default TodoForm;
